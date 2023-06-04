@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
   BrowserModule,
     AppRoutingModule,
     FormsModule      ,
-    HttpClientModule                
+    HttpClientModule    ,
+    NgChartsModule            
   ],
   providers: [],
   bootstrap: [AppComponent]

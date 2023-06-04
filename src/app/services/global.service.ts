@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { Coverter } from '../models/coverter';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,5 +19,11 @@ export class GlobalService {
   }
   public availableCurrencies(): Observable<any> {
     return this.http.get(`${environment.baseUrl}/symbols?access_key=${environment.apiKey}`).pipe(map(res => res));
+  }
+
+  private fromAndToDetails = new BehaviorSubject({from:'',to:'',amount:0});
+ currentfromAndToDetails = this.fromAndToDetails.asObservable();
+ updatefromAndToDetails(newfromAndToDetails:Coverter) {
+  this.fromAndToDetails.next(newfromAndToDetails)
   }
 }

@@ -9,7 +9,7 @@
                     <div class="me-auto w-50">
                         <label for="amount" class="form-label">Amount</label>
 
-                        <input type="number" class="form-control" id="amount" name="amount"
+                        <input type="number" min="0" class="form-control" id="amount" name="amount"
                             placeholder="Please Enter Your Amount" #amount="ngModel" [(ngModel)]="model.amount" required
                             [class.is-valid]="amount.valid &&
                              (amount.dirty || amount.touched)" [class.is-invalid]="amount.invalid &&
@@ -61,10 +61,10 @@
             </form>
 
             <div class="d-flex mt-5">
-                <div class=" text-center border  w-50">1.00 EUR = {{EURtoUSD}} USD</div>
+                <div class=" text-center border  w-50 fw-bold">1.00 {{myForm.value.from}} = {{EURtoUSD}} {{myForm.value.to}} </div>
                 <div class="d-flex  w-50 justify-content-end">
-                    <div class="USD-div border text-center">{{convertedAmount}} USD</div>
-                    <button class="btn btn-primary w-30 USD-btn">Details</button>
+                    <div class="USD-div border text-center fw-bold">{{convertedAmount}} {{myForm.value.to}}</div>
+                    <button class="btn btn-primary w-30 USD-btn" routerLink="details">Details</button>
 
                 </div>
 
@@ -75,27 +75,14 @@
 
 
     <div class="row mt-5 text-center">
-        <div class="col-md-4 text-center  fw-bold border p-5">
+        <div class="col-md-4 text-center  fw-bold border p-5" *ngFor="let val of currencies;let i = index">
 
-            1.00 EUR = {{EURtoUSD}} USD
-
-
-        </div>
-
-        <div class="col-md-4  text-center  fw-bold border p-5">
-
-            1.00 EUR = {{EURtoUSD}} USD
+            {{myForm.value.amount}} {{myForm.value.from}} = {{val*myForm.value.amount}} {{currenciesNames[i]}}
 
 
         </div>
 
-        <div class="col-md-4  text-center  fw-bold border p-5">
-
-            1.00 EUR = {{EURtoUSD}} USD
-
-
-        </div>
-        <div class="col-md-4  text-center  fw-bold border p-5">
+        <!-- <div class="col-md-4  text-center  fw-bold border p-5">
 
             1.00 EUR = {{EURtoUSD}} USD
 
@@ -114,6 +101,7 @@
 
 
         </div>
+
         <div class="col-md-4  text-center  fw-bold border p-5">
 
             1.00 EUR = {{EURtoUSD}} USD
@@ -132,6 +120,18 @@
 
 
         </div>
+        <div class="col-md-4  text-center  fw-bold border p-5">
+
+            1.00 EUR = {{EURtoUSD}} USD
+
+
+        </div>
+        <div class="col-md-4  text-center  fw-bold border p-5">
+
+            1.00 EUR = {{EURtoUSD}} USD
+
+
+        </div> -->
 
     </div>
 </div>
