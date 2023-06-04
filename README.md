@@ -1,27 +1,50 @@
-# CurrencyExchanger
+# Table of Content:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+- [Project Title](#project-title)
+- [About The Project](#about-the-project)
+- [Technologies](#technologies)
+- [Folder Structure](#folder-structure)
+- [Setup](#setup)
+- [Live Demo](#live-demo)
 
-## Development server
+## Project Title
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Goldady - The Technical Exercise.
 
-## Code scaffolding
+## About The Project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+submission for the required task
 
-## Build
+## Technologies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+I used
+`react` in `typescript` with
+`next` framework for better performance and SEO results,
+`RTK` for handling the app state & async requests,
+`tailwindcss` framework for styling & `daisyui` for components.
+`eslint` & `prettier` for coding guidelines standards.
+also I used `framer-motion` for the animations.
 
-## Running unit tests
+## Folder Structure
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+app
+│    
+│    │──model
+│    │   ├── contain Interfaces
+│    
+├── components
+│    │   └── └── contain  components
+│    
+│    services
+│    └── contain services
+│  
+```
 
-## Running end-to-end tests
+## Setup
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- download or clone the repository
+- run `npm install`
+- run the development server `ng serve`
+- open [http://localhost:4200](http://localhost:4200) with your browser.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

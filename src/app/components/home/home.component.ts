@@ -17,8 +17,8 @@ export class HomeComponent implements OnInit,OnDestroy {
   currencies: number[] = [];
   currenciesNames: string[] = [];
   currenciesContainer: number[] = [];
-  subscription1$!: Subscription
-  subscription2$!: Subscription 
+  subscription1$: Subscription= new Subscription();
+  subscription2$: Subscription = new Subscription();
      model:Coverter ={from:'EUR',to:'USD',amount:0}
   ngOnInit() {
     this.subscription1$= this._GlobalService.getEURtoUSD().subscribe((res) => {      
